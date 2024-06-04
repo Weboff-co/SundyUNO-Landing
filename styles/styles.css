@@ -32,42 +32,66 @@ body {
     max-width: 1536px;
     display: flex;
     flex-direction: column;
-    gap: 100px
+    gap: 60px
     /* border: solid red 1px; */
 }
 
 /* NAVBAR */
 
-.nav {
-    color: white;
-    padding: 50px 0;
-}
-
-.nav-row {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    color: white;
-    font-size: 24px;
-}
-
-.logo span {
-    color: rgba(249, 113, 39, 1);
-}
-
-.menu {
+    padding: 40px 60px;
+    color: #fff;
+  }
+  .navbar .logo {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .navbar .logo span {
+    color: var(--text-second-color);
+  }
+  .navbar .menu {
     display: flex;
-    align-items: center;
-    column-gap: 100px;
+    width: 100%;
+    justify-content: space-around;
+    max-width: 860px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar .menu li {
+    margin-left: 20px;
+  }
+  .navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
     font-size: 16px;
-    font-weight: 400;
-    color: white;
-    font-family: 'Poppins';
-}
+  }
+  .navbar .menu li a:hover {
+    color: #ff6347; /* Цвет при наведении */
+  }
 
+  .menu-toggle {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  @media (max-width: 980px) {
+    .navbar .menu {
+      display: none;
+    }
+    .navbar .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: 980px) {
+    .navbar .menu-toggle {
+      display: none;
+    }
+  }
 /* HEADER */
 
 .header {
@@ -299,10 +323,6 @@ body {
 
 /* BUY NOW Block */
 
-.buy_now-block {
-    margin-top: 100px;
-}
-
 
 .buy_now-box {
     background-color: rgb(200, 107, 20);
@@ -310,18 +330,19 @@ body {
     border-radius: 20px;
     height: auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     padding: 40px;
     box-sizing: border-box;
     color: rgba(0, 7, 26, 0.7);
     align-items: center;
+    gap: 50px;
 }
 
 
 @media(max-width:1280px) {
     .buy_now-box {
         flex-direction: column;
+        gap: 0;
     }
 }
 
@@ -332,8 +353,6 @@ body {
     font-weight: 900;
     text-align: center;
     justify-content: center;
-    width: 300px;
-    margin-right: 50px;
     color: rgb(255, 255, 255);
     text-shadow: 0px 0px 20px rgb(151, 58, 0);
 }   
@@ -350,28 +369,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     row-gap: 20px;
 }
 
-
-
 .buy_now-tittle {
     font-weight: 600;
-    font-size: 48px;
-    line-height: 67.2px;
-    display: flex;
-    margin-left: 0px;
+    font-size: 3rem;
+    line-height: 3rem;
 }
 
 @media(max-width:1280px) {
     .buy_now-tittle {
         margin: 0 auto;
+        text-align: center;
     }
 }
 
 .buy_now-tittle span {
-    padding-left: 10px;
     color: white;
 }
 
@@ -379,7 +393,6 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 28.8px;
-    width: 900px;
     text-align: left;
     margin-left: 0px;
 }
@@ -669,14 +682,7 @@ body {
     font-size: 40px;
     font-weight: 600;
     line-height: 64px;
-    width: 1200px;
     margin: 0 auto;
-}
-
-@media(max-width: 1366px) {
-    .secure-main-tittle {
-        width: 600px;
-    }   
 }
 
 .secure-main-tittle span {
@@ -768,7 +774,6 @@ body {
 .secure-tittle-under {
     margin: 0 auto;
     width: 100%;
-    margin-top: 50px;
     text-align: center;
     font-size: 40px;
     font-weight: 600;
@@ -781,10 +786,14 @@ body {
 
 /* REVIEWS */
 
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
 .reviews-top-content {
     /* border: solid red 1px; */
-    padding: 7px 15px;
-    height: 164px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -811,14 +820,13 @@ body {
     font-size: 18px;
     line-height: 32.4px;
     color: rgba(255, 255, 255, 0.699);
-    margin-right: 0px;
     text-align: center;
 }
 
 @media(max-width: 1024px) {
     .reviews-top-text {
         text-align: center;
-
+        width: 100%;
     }   
 }
 
@@ -831,8 +839,13 @@ body {
     text-align: center;
 }
 
+@media (max-width: 1024px){
+    .reviews-top-tittle {
+        width: 100%;
+    }
+}
+
 .reviews-blocks-grid {
-    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
