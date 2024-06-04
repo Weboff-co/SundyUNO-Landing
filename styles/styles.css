@@ -406,7 +406,6 @@ body {
 }
 
 .intro-leftside {
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -417,7 +416,6 @@ body {
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
-    border: solid green 1px;
 }
 
 
@@ -493,25 +491,40 @@ body {
 .challenge-block {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     /* border: solid yellow 1px; */
+}
+
+@media(max-width: 1280px) {
+    .challenge-block{
+        flex-direction: column;
+    }
 }
 
 .challenge-leftside {
     display: flex;
     flex-direction: column;
-    border: solid red 1px;
+    width: 50%;
+    gap: 20px;
 }
 
 .challenge-rightside {
-    border: solid green 1px;
     display: flex;
     flex-direction: column;
+    width: 50%;
+    gap: 50px;
+    text-align: left;
+}
+
+@media (max-width: 1280px) {
+    .challenge-leftside, .challenge-rightside {
+        width: 100%;
+    }
 }
 
 .bitcoin-block {
     position: relative;
-    height: 100%;
-    border: solid blue 1px;
+    min-height: 490px;
 }
 
 
@@ -545,34 +558,25 @@ body {
 .challenge-hiw {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    height: 100%;    
 }
 
 
 .challenge-howitworks-tittle {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 600;
-    inline-size: 76.8px;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-left: 0px;
-}
-
-.challenge-hiw-topics {
-    width: 488px;
-    margin-top: 30px
+    line-height: 3rem;
 }
 
 .challenge-hiw-tittles {
-    text-align: left;
     font-size: 18px;
     font-weight: 600;
-    margin-top: 1px;
 }
 
 .challenge-hiw-text {
-    text-align: left;
     color: rgba(255, 255, 255, 0.736);
-    margin-top: 10px;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -589,14 +593,12 @@ body {
 }
 
 .challenge-rightside-tittle {
-    width: 600px;
     margin-left: 0;
     margin-right: 0px;
     margin-top: 10px;
     font-size: 48px;
     font-weight: 600;
-    line-height: 65.28px;
-    text-align: left;
+    line-height: 65px;
 }
 
 
@@ -605,14 +607,11 @@ body {
 }
 
 .challenge-under-tittle-text {
-    width: 538px;
     margin-top: 20px;
     color: rgba(255, 255, 255, 0.758);
     font-size: 18px;
     font-weight: 400;
-    line-height: 28.8px;
-    text-align: left;
-    margin-left: 0px;
+    line-height: 28px;
 }
 
 
@@ -620,45 +619,31 @@ body {
     color: #F97127;
 }
 
+
 .challenge-wtm {
-    margin-top: 187px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    height: 100%;
 }
+
 
 
 .challenge-whythismatters-tittle {
     font-weight: 600;
-    font-size: 48px;
-    margin-right: 0px;
-}
-
-
-
-.challenge-wtm-topics {
-    width: 539px;
-    margin-top: 40px;
-    margin-left: 0px;
+    font-size: 3rem;
+    line-height: 3rem;
 }
 
 
 .challenge-wtm-tittles {
-    text-align: left;
     font-size: 18px;
     font-weight: 600;
-    line-height: 23.4px;
-}
-
-#challenge-wtm-poof-topic-tittle {
-    margin-right: 0px;
-}
-
-
-#challenge-wtm-poof-topic-text {
-    margin-left: 0px;
+    line-height: 23px;
 }
 
 .challenge-wtm-text {
-    width: 539px;
     margin-top: 5px;
     font-size: 16px;
     font-weight: 400;
@@ -670,12 +655,14 @@ body {
     color: #F97127;
 }
 
+@media (max-width: 1280px) {
+    .challenge-hiw, .challenge-rightside {
+        text-align: center;
+    }
+}
+
 
 /* SECURE YOUR DATA block */
-
-.secure-ur-data-block {
-    margin-top: 100px;
-}
 
 .secure-main-tittle {
     text-align: center;
@@ -780,18 +767,12 @@ body {
 
 .secure-tittle-under {
     margin: 0 auto;
-    width: 900px;
+    width: 100%;
     margin-top: 50px;
     text-align: center;
     font-size: 40px;
     font-weight: 600;
     line-height: 64px;
-}
-
-@media(max-width: 1366px) {
-    .secure-tittle-under {
-        width: 600px;
-    }   
 }
 
 .secure-tittle-under span {
@@ -800,14 +781,9 @@ body {
 
 /* REVIEWS */
 
-.reviews {
-    margin-top: 100px;
-}
-
 .reviews-top-content {
     /* border: solid red 1px; */
     padding: 7px 15px;
-    width: 1200px;
     height: 164px;
     margin: 0 auto;
     display: flex;
@@ -816,16 +792,11 @@ body {
     align-items: stretch;
 }
 
-@media(max-width: 1366px) {
-    .reviews-top-content {
-        flex-direction: column-reverse;
-        align-items: center;
-    }   
-}
-
-@media(max-width:1250px) {
+@media(max-width:1024px) {
     .reviews-top-content {
         width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
     }
 }
 
@@ -835,19 +806,19 @@ body {
     align-items: center;
     justify-content: center;
     /* margin: 0 auto; */
-    width: 459px;
+    width: 50%;
     font-weight: 400;
     font-size: 18px;
     line-height: 32.4px;
     color: rgba(255, 255, 255, 0.699);
     margin-right: 0px;
-    text-align: left;
+    text-align: center;
 }
 
-@media(max-width: 1366px) {
+@media(max-width: 1024px) {
     .reviews-top-text {
-        margin-right: 60px;
         text-align: center;
+
     }   
 }
 
@@ -855,14 +826,9 @@ body {
     font-weight: 600;
     font-size: 48px;
     line-height: 81.6px;
-    width: 478px;
+    width: 50%;
     margin-left: 0px;
-}
-
-@media(max-width: 1366px) {
-    .reviews-top-tittle {
-        margin-left: 20px;
-    }   
+    text-align: center;
 }
 
 .reviews-blocks-grid {
@@ -875,14 +841,14 @@ body {
 
 @media(max-width: 1366px) {
     .reviews-blocks-grid {
-        margin-top: 50px;
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }   
 }
 
 .review-block {
-    height: 420px;
+    height: 400px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.101);
     border-radius: 20px;
@@ -892,7 +858,8 @@ body {
 
 @media(max-width: 1366px) {
     .review-block {
-        margin-top: 20px;
+        width: 100%;
+        height: 100%;
     }   
 }
 
@@ -948,10 +915,6 @@ body {
 
 
 /* FOOTER */
-
-.footer {
-    margin-top: 200px;
-}
 
 .footer-grid {
     display: flex;
